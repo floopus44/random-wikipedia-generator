@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Wikipedia Article Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mascot-container">
+        <img id="mascot-img" src="img/mascot.png" alt="Mascot Image">
+    </div>
+    <div class="top-bar">
+        <div class="nav-section">
+            <a href="index.html">HOME</a>
+            <a href="">GITHUB</a> <!-- TODO: insert link -->
+        </div>
+        <div class="nav-section">
+            <a>
+                ENGLISH
+            </a> <!-- TODO: implement language selection -->
+
+        </div>
+
+        <div class="nav-section logo-section" id="logo-container">
+            <img id="logo-img" src="img/logo.png" alt="Logo Image">
+        </div>
+    </div>
+    <div id="wrap">
+        <div class="container">
+            <button id="generate-btn">Generate Random Article</button>
+            <h1>Random Wikipedia Article Generator</h1>
+            <div id="article-container" class="article collapsed" hidden>
+                <h2></h2>
+                <div id="article-content">
+                    <img id="article-image" alt="Article Image" hidden>
+                    <!-- This could potentially be used to display an image but I don't want to deal with the legal stuff -->
+                </div>
+            </div>
+            <div id="attribution" hidden>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <script src="wikipedia.js" type="module"></script>
+    <script src="ui.js" type="module"></script>
+</body>
