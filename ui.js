@@ -1,40 +1,38 @@
-const articleElement = document.getElementById('article-container');
+const articleElement = document.getElementById("article-container");
 
-
-
-articleElement.addEventListener('click', () => {
-  if (articleElement.classList.contains('expanded')) {
-    articleElement.classList.remove('expanded');
+articleElement.addEventListener("click", () => {
+  if (articleElement.classList.contains("expanded")) {
+    articleElement.classList.remove("expanded");
 
     setTimeout(() => {
-      articleElement.classList.add('collapsed');
+      articleElement.classList.add("collapsed");
     }, 300);
   } else {
-    articleElement.classList.remove('collapsed');
-    articleElement.classList.add('expanded');
+    articleElement.classList.remove("collapsed");
+    articleElement.classList.add("expanded");
   }
 });
 
-const IMG_SRC = './img/mascot.png';
-const IMG_SRC_ALT = './img/mascot-alt.png';
+const IMG_SRC = "./img/mascot.png";
+const IMG_SRC_ALT = "./img/mascot-alt.png";
 
-const mascotImg = document.getElementById('mascot-img');
+const mascotImg = document.getElementById("mascot-img");
 
 function updateMascotVisibility() {
   if (window.innerWidth <= 700) {
-    mascotImg.style.display = 'none';
+    mascotImg.style.display = "none";
     return;
   }
 
-  mascotImg.style.display = '';
+  mascotImg.style.display = "";
 }
 
-mascotImg.addEventListener('click', function () {
-  window.location.href = '/';
+mascotImg.addEventListener("click", function () {
+  window.location.href = "/";
 });
 
 updateMascotVisibility();
-window.addEventListener('resize', updateMascotVisibility);
+window.addEventListener("resize", updateMascotVisibility);
 
 (function () {
   const img = mascotImg;
@@ -49,7 +47,7 @@ window.addEventListener('resize', updateMascotVisibility);
     return distance < threshold;
   }
 
-  document.addEventListener('mousemove', function (event) {
+  document.addEventListener("mousemove", function (event) {
     if (checkProximity(event.clientX, event.clientY)) {
       img.src = IMG_SRC_ALT;
     } else {
@@ -59,10 +57,10 @@ window.addEventListener('resize', updateMascotVisibility);
 })();
 
 export function displayArticle(title, content, url, license) {
-  const container = document.getElementById('article-container');
-  const attributionContainer = document.getElementById('attribution');
-  const titleElement = document.querySelector('#article-container h2');
-  const contentElement = document.querySelector('#article-content');
+  const container = document.getElementById("article-container");
+  const attributionContainer = document.getElementById("attribution");
+  const titleElement = document.querySelector("#article-container h2");
+  const contentElement = document.querySelector("#article-content");
 
   container.hidden = false;
   attributionContainer.hidden = false;
@@ -75,18 +73,17 @@ export function displayArticle(title, content, url, license) {
     <a href="${url}" target="_blank" rel="noopener noreferrer">Read full article here</a><br>
     Excerpt may not be representative of the full article. Click "Read full article here" to read the entire article on Wikipedia.`;
 
-
   updateExpandableState();
 }
 
 function updateExpandableState() {
   const isOverflowing = articleElement.scrollHeight > 400;
 
-  articleElement.classList.remove('collapsed');
-  articleElement.classList.remove('can-expand');
+  articleElement.classList.remove("collapsed");
+  articleElement.classList.remove("can-expand");
 
   if (isOverflowing) {
-    articleElement.classList.add('collapsed');
-    articleElement.classList.add('can-expand');
+    articleElement.classList.add("collapsed");
+    articleElement.classList.add("can-expand");
   }
 }

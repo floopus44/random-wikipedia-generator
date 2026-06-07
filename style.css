@@ -101,10 +101,10 @@ body {
 }
 
 #attribution {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    text-align: left;
-    align-self: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: left;
+  align-self: center;
   width: min(400px, calc(100vw - 32px));
 }
 

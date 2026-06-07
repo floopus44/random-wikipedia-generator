@@ -1,9 +1,9 @@
-const LANG = 'en';
+const LANG = "en";
 const API_URL = `https://${LANG}.wikipedia.org/api/rest_v1`;
 const fallbackAttribution = {
-  source: 'Wikipedia',
-  license: 'CC BY-SA 4.0',
-  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.en',
+  source: "Wikipedia",
+  license: "CC BY-SA 4.0",
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
 };
 export async function fetchRandomArticle() {
   const response = await fetch(`${API_URL}/page/random/summary`);
