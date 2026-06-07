@@ -163,6 +163,7 @@ button {
   align-items: center;
   gap: 1rem;
   border-left: 1px solid var(--text);
+  padding-left: 1rem;
 }
 
 .nav-section:first-child {
