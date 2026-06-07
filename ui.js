@@ -1,27 +1,27 @@
-const articleElement = document.getElementById("article-container");
+const articleElement = document.getElementById('article-container');
 
-articleElement.addEventListener("click", () => {
-  if (articleElement.classList.contains("expanded")) {
-    articleElement.classList.remove("expanded");
+articleElement.addEventListener('click', () => {
+  if (articleElement.classList.contains('expanded')) {
+    articleElement.classList.remove('expanded');
 
     setTimeout(() => {
-      articleElement.classList.add("collapsed");
+      articleElement.classList.add('collapsed');
     }, 300);
   } else {
-    articleElement.classList.remove("collapsed");
-    articleElement.classList.add("expanded");
+    articleElement.classList.remove('collapsed');
+    articleElement.classList.add('expanded');
   }
 });
 
-const IMG_SRC = "./img/mascot.png";
-const IMG_SRC_ALT = "./img/mascot-alt.png";
+const IMG_SRC = './img/mascot.png';
+const IMG_SRC_ALT = './img/mascot-alt.png';
 
-document.getElementById("mascot-img").addEventListener("click", function () {
-  window.location.href = "/";
+document.getElementById('mascot-img').addEventListener('click', function () {
+  window.location.href = '/';
 });
 
 (function () {
-  const img = document.getElementById("mascot-img");
+  const img = document.getElementById('mascot-img');
   function checkProximity(x, y) {
     const rect = img.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
@@ -33,7 +33,7 @@ document.getElementById("mascot-img").addEventListener("click", function () {
     return distance < threshold;
   }
 
-  document.addEventListener("mousemove", function (event) {
+  document.addEventListener('mousemove', function (event) {
     if (checkProximity(event.clientX, event.clientY)) {
       img.src = IMG_SRC_ALT;
     } else {
@@ -43,10 +43,10 @@ document.getElementById("mascot-img").addEventListener("click", function () {
 })();
 
 export function displayArticle(title, content, url, license) {
-  const container = document.getElementById("article-container");
-  const attributionContainer = document.getElementById("attribution");
-  const titleElement = document.querySelector("#article-container h2");
-  const contentElement = document.querySelector("#article-content");
+  const container = document.getElementById('article-container');
+  const attributionContainer = document.getElementById('attribution');
+  const titleElement = document.querySelector('#article-container h2');
+  const contentElement = document.querySelector('#article-content');
 
   container.hidden = false;
   attributionContainer.hidden = false;
@@ -66,11 +66,11 @@ export function displayArticle(title, content, url, license) {
 function updateExpandableState() {
   const isOverflowing = articleElement.scrollHeight > 400;
 
-  articleElement.classList.remove("collapsed");
-  articleElement.classList.remove("can-expand");
+  articleElement.classList.remove('collapsed');
+  articleElement.classList.remove('can-expand');
 
   if (isOverflowing) {
-    articleElement.classList.add("collapsed");
-    articleElement.classList.add("can-expand");
+    articleElement.classList.add('collapsed');
+    articleElement.classList.add('can-expand');
   }
 }
