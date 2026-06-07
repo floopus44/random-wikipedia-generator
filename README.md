@@ -16,3 +16,8 @@ https://floopus44.github.io/random-wikipedia-generator/
 **Features**
 
 Right now, the website can only do one basic thing: Show a random Wikipedia article
+
+
+This project uses the Wikimedia REST APIs and their Attribution API:
+https://meta.wikimedia.org/w/index.php?api=wmf-restbase&title=Special%3ARestSandbox
+https://meta.wikimedia.org/w/index.php?api=attribution.v0-beta&title=Special%3ARestSandbox
