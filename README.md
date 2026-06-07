@@ -12,3 +12,7 @@ Test it here
 VVVVVVVVVVVV
 
 https://floopus44.github.io/random-wikipedia-generator/
+
+**Features**
+
+Right now, the website can only do one basic thing: Show a random Wikipedia article
