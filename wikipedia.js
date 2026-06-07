@@ -8,7 +8,6 @@ const fallbackAttribution = {
 export async function fetchRandomArticle() {
   const response = await fetch(`${API_URL}/page/random/summary`);
   const data = await response.json();
-  console.log(data);
   data.license = await fetchAttribution(data.title);
   return data;
 }

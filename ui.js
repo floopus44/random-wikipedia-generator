@@ -1,5 +1,7 @@
 const articleElement = document.getElementById('article-container');
 
+
+
 articleElement.addEventListener('click', () => {
   if (articleElement.classList.contains('expanded')) {
     articleElement.classList.remove('expanded');
@@ -16,12 +18,26 @@ articleElement.addEventListener('click', () => {
 const IMG_SRC = './img/mascot.png';
 const IMG_SRC_ALT = './img/mascot-alt.png';
 
-document.getElementById('mascot-img').addEventListener('click', function () {
+const mascotImg = document.getElementById('mascot-img');
+
+function updateMascotVisibility() {
+  if (window.innerWidth <= 700) {
+    mascotImg.style.display = 'none';
+    return;
+  }
+
+  mascotImg.style.display = '';
+}
+
+mascotImg.addEventListener('click', function () {
   window.location.href = '/';
 });
 
+updateMascotVisibility();
+window.addEventListener('resize', updateMascotVisibility);
+
 (function () {
-  const img = document.getElementById('mascot-img');
+  const img = mascotImg;
   function checkProximity(x, y) {
     const rect = img.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
